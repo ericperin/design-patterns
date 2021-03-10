@@ -1,4 +1,5 @@
 ﻿using System;
+using src.State;
 
 namespace DesignPatterns
 {
@@ -6,7 +7,18 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var budget = new Budget(500);
+            Console.WriteLine(budget.Value);
+
+            budget.ApplyDiscount();
+            Console.WriteLine(budget.Value);
+
+            budget.Approve();
+
+            budget.ApplyDiscount();
+            Console.WriteLine(budget.Value);
+
+            budget.Finish();
         }
     }
 }
